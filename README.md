@@ -1,102 +1,84 @@
-# World Models: Represent, Simulate, and Act
+# Awesome World Models: Represent, Simulate, and Act 🌍
 
-[中文说明](README.zh-CN.md)
+A curated collection of papers, datasets, benchmarks, and resources for **World Models**.
 
-A reproducible literature library built from **Learning to Represent, Simulate, and Act: A Survey of World Models** and its supplied BibTeX bibliography.
+This repository organizes world models from an information-flow perspective:
 
-## What is included
+```
+Observation
+     ↓
+Representation
+     ↓
+Simulation
+     ↓
+Action
+     ↓
+Environment
+```
 
-- **64 bibliography records** from the supplied reference file. Citation key `56` is absent in the source.
-- Primary method-paper taxonomy: **10 represent**, **13 simulate**, and **16 action**.
-- **25 supporting resources** covering surveys, theory, datasets, benchmarks, metrics, simulators, and talks.
-- BibTeX split by category, plus YAML/JSON/CSV catalogs.
-- A resumable downloader for open-access PDFs.
-- Validation scripts and a metadata-audit report.
+## Contents
 
-> The three model categories are intentionally not treated as mutually exclusive. The catalog stores a primary category for navigation and secondary categories for cross-stage systems.
+| Category | Description | Link |
+|---|---|---|
+| Survey | World model surveys and tutorials | [SURVEY.md](SURVEY.md) |
+| Representation | Predictive internal states | [REPRESENT.md](REPRESENT.md) |
+| Simulation | Future prediction and generation | [SIMULATE.md](SIMULATE.md) |
+| Action | Embodied control and VLA systems | [ACTION.md](ACTION.md) |
+| Datasets | Training resources | [DATASETS.md](DATASETS.md) |
+| Benchmarks | Evaluation platforms | [BENCHMARKS.md](BENCHMARKS.md) |
 
-## Repository layout
+## Taxonomy
 
-```text
+### Representation Models
+
+Learning compact and predictive states from observations.
+
+Main directions:
+
+- Latent-State Representation
+- Tokenized Representation
+- Structured Representation
+
+### Simulation Models
+
+Expanding internal states into possible futures.
+
+Main directions:
+
+- Latent Dynamics
+- Observation-Space Generation
+- Physical Simulation
+
+### Action Models
+
+Using predicted futures for executable behavior.
+
+Main directions:
+
+- Policy Grounding
+- Vision-Language-Action Models
+- World Action Models
+
+## Repository Structure
+
+```
 .
-├── data/
-│   ├── papers.yaml          # canonical catalog
-│   ├── papers.json
-│   └── papers.csv
+├── README.md
+├── REPRESENT.md
+├── SIMULATE.md
+├── ACTION.md
+├── DATASETS.md
+├── BENCHMARKS.md
+├── SURVEY.md
 ├── references/
-│   ├── all.bib
-│   └── by-category/
-├── docs/
-│   ├── represent.md
-│   ├── simulate.md
-│   ├── action.md
-│   ├── supporting.md
-│   ├── classification-policy.md
-│   └── metadata-audit.md
-├── papers/                  # downloaded locally; ignored by Git by default
-├── scripts/
-│   ├── download_papers.py
-│   ├── export_catalog.py
-│   ├── validate_catalog.py
-│   └── make_reading_list.py
-└── .github/workflows/validate.yml
+├── data/
+└── scripts/
 ```
 
-## Download the papers
+## Citation
 
-Python 3.10+ is recommended.
+If this repository helps your research, please cite:
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/download_papers.py --all --workers 4
 ```
-
-Download only one core category:
-
-```bash
-python scripts/download_papers.py --category represent
-python scripts/download_papers.py --category simulate
-python scripts/download_papers.py --category action
+Learning to Represent, Simulate, and Act: A Survey of World Models
 ```
-
-The downloader verifies the `%PDF` signature, resumes safely by skipping existing files, records SHA-256 checksums, and writes `data/download-manifest.json` plus `data/download-report.csv`.
-
-The catalog currently contains **59 direct PDF records**, **2 webpage records**, **2 manual records**, and **1 blocked/unresolved record**. Non-PDF items remain visible instead of being silently omitted; an identifier that resolves to the wrong paper is explicitly blocked.
-
-## Validate the library
-
-```bash
-python scripts/validate_catalog.py
-```
-
-## Generate a concise reading list
-
-```bash
-python scripts/make_reading_list.py
-```
-
-## Publishing PDFs to GitHub
-
-The repository ignores downloaded PDFs by default so that the public Git history stays lightweight and respects each paper's redistribution terms. To version open-access PDFs explicitly, use Git LFS and review each source license first:
-
-```bash
-git lfs install
-git lfs track "papers/**/*.pdf"
-git add .gitattributes papers/
-```
-
-## Taxonomy entry points
-
-- [Represent](docs/represent.md)
-- [Simulate](docs/simulate.md)
-- [Action](docs/action.md)
-- [Supporting resources](docs/supporting.md)
-- [Classification policy](docs/classification-policy.md)
-- [Metadata audit](docs/metadata-audit.md)
-- [Download status](docs/download-status.md)
-- [Citation-key note](docs/citation-key-map.md)
-- [Contributing](CONTRIBUTING.md)
-
-## Citation and licensing
-
-Bibliographic metadata and repository code are provided for research organization. Each paper remains subject to its publisher or author license. Do not redistribute paywalled copies without permission.
