@@ -1,84 +1,69 @@
 # Awesome World Models: Represent, Simulate, and Act 🌍
 
-A curated collection of papers, datasets, benchmarks, and resources for **World Models**.
+A curated collection of world model papers, datasets, benchmarks, and resources organized around the three-stage information flow:
 
-This repository organizes world models from an information-flow perspective:
+**Representation → Simulation → Action**
 
-```
-Observation
-     ↓
-Representation
-     ↓
-Simulation
-     ↓
-Action
-     ↓
-Environment
-```
+World models learn internal representations of environments, predict possible futures, and use these predictions to support decision-making and embodied intelligence.
 
 ## Contents
 
-| Category | Description | Link |
-|---|---|---|
-| Survey | World model surveys and tutorials | [SURVEY.md](SURVEY.md) |
-| Representation | Predictive internal states | [REPRESENT.md](REPRESENT.md) |
-| Simulation | Future prediction and generation | [SIMULATE.md](SIMULATE.md) |
-| Action | Embodied control and VLA systems | [ACTION.md](ACTION.md) |
-| Datasets | Training resources | [DATASETS.md](DATASETS.md) |
-| Benchmarks | Evaluation platforms | [BENCHMARKS.md](BENCHMARKS.md) |
+| Topic | Description |
+|---|---|
+| 📖 Survey | Surveys and foundations |
+| 🧠 Representation | Predictive latent states and structured representations |
+| 🌎 Simulation | Future prediction, generation, and physical simulation |
+| 🤖 Action | VLA models and world action models |
+| 📦 Datasets | Training resources |
+| 📊 Benchmarks | Evaluation platforms |
 
 ## Taxonomy
 
-### Representation Models
+### 🧠 Representation
 
-Learning compact and predictive states from observations.
-
-Main directions:
+Learning what information should be preserved from observations.
 
 - Latent-State Representation
 - Tokenized Representation
 - Structured Representation
 
-### Simulation Models
+See: [REPRESENT.md](REPRESENT.md)
+
+### 🌎 Simulation
 
 Expanding internal states into possible futures.
-
-Main directions:
 
 - Latent Dynamics
 - Observation-Space Generation
 - Physical Simulation
 
-### Action Models
+See: [SIMULATE.md](SIMULATE.md)
 
-Using predicted futures for executable behavior.
+### 🤖 Action
 
-Main directions:
+Grounding predicted futures into executable behavior.
 
 - Policy Grounding
 - Vision-Language-Action Models
 - World Action Models
 
-## Repository Structure
+See: [ACTION.md](ACTION.md)
 
-```
-.
-├── README.md
-├── REPRESENT.md
-├── SIMULATE.md
-├── ACTION.md
-├── DATASETS.md
-├── BENCHMARKS.md
-├── SURVEY.md
-├── references/
-├── data/
-└── scripts/
+## Database-driven Maintenance
+
+This repository maintains structured metadata in `data/papers.yaml`.
+Markdown pages can be regenerated using:
+
+```bash
+python scripts/generate_awesome.py
 ```
 
 ## Citation
 
-If this repository helps your research, please cite:
+If this repository helps your research, please cite the related survey:
 
-```
-Learning to Represent, Simulate, and Act: A Survey of World Models
-```
+"Learning to Represent, Simulate, and Act: A Survey of World Models"
+
+## License
+
+Paper copyrights belong to their respective authors and publishers.
