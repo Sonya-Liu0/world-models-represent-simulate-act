@@ -1,0 +1,20 @@
+# Downloaded literature assets
+papers/**/*.pdf
+papers/**/*.html
+papers/**/*.url
+!papers/**/.gitkeep
+
+# Generated download reports with machine-specific paths/checksums
+data/download-manifest.json
+data/download-report.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

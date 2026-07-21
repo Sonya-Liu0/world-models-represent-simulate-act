@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If this literature library helps your work, please cite the survey and this repository."
+title: "World Models: Represent, Simulate, and Act — Literature Library"
+type: dataset
+authors:
+  - family-names: Liu
+    given-names: Shiyang
+year: 2026
+license: MIT
