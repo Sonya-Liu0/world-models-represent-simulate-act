@@ -1,61 +1,66 @@
-# 世界模型文献库：Represent、Simulate 与 Action
+# Awesome World Models: Represent, Simulate, and Act 🌍
 
-本仓库依据综述 **Learning to Represent, Simulate, and Act: A Survey of World Models** 及配套参考文献整理，目标是形成一个可复现、可扩展的世界模型文献库。
+整理世界模型相关论文与资源，围绕 **表征（Represent）→ 模拟（Simulate）→ 行动（Act）** 展开。
 
-## 当前内容
+A curated collection of world model papers and resources organized by Representation, Simulation, and Action.
 
-- 共整理 **64 条参考文献记录**；原始 BibTeX 中缺少编号 `56`。
-- 核心方法论文按主要贡献分为：**Represent 10 篇、Simulate 13 篇、Action 16 篇**。
-- 另有 **Supporting 25 条**，用于保存综述、理论、数据集、基准、指标、仿真器与报告，避免将非模型论文强行塞入三类。
-- 当前目录提供 **59 个可自动下载的 PDF 来源**；其余为网页、报告或待核验记录。
-- 每条记录均包含主分类、次分类、分类理由、下载地址、目标路径与元数据质量标记。
+欢迎 Star、Fork 和 PR，一起补充论文、代码与项目链接。
 
-## 三类划分原则
+## 论文目录 (Contents)
 
-- **Represent**：主要创新位于预测表征、潜状态、视觉/多模态 token、对象结构、场景图或三维几何表示。
-- **Simulate**：主要创新位于潜空间滚动、未来观测生成、交互世界生成或物理一致性模拟。
-- **Action**：主要创新位于策略落地、VLA 动作生成、预测引导控制或 World Action Model。
+**[📚 浏览完整论文列表：64 条去重资源](WORLD_MODELS.md)**
 
-对于同时跨越多个环节的方法，仓库保留一个便于浏览的 `primary_category`，并用 `secondary_categories` 标记交叉属性。
+- [1. 表征学习 (Representation)](REPRESENT.md)
+  - [1.1. 潜在状态与预测表征 (Latent & Predictive Representations)](REPRESENT.md#section-1)
+  - [1.2. 多模态词元表征 (Multimodal Tokenization)](REPRESENT.md#section-2)
+  - [1.3. 结构化世界表征 (Structured Representations)](REPRESENT.md#section-3)
+- [2. 世界模拟 (Simulation)](SIMULATE.md)
+  - [2.1. 潜在动力学 (Latent Dynamics)](SIMULATE.md#section-1)
+  - [2.2. 视频与交互生成 (Video & Interactive Generation)](SIMULATE.md#section-2)
+  - [2.3. 三维世界与数据生成 (3D Worlds & Data Generation)](SIMULATE.md#section-3)
+- [3. 行动与控制 (Action)](ACTION.md)
+  - [3.1. 策略落地与具身控制 (Policy Grounding & Embodied Control)](ACTION.md#section-1)
+  - [3.2. 视觉语言动作模型 (Vision-Language-Action Models)](ACTION.md#section-2)
+  - [3.3. 世界动作模型 (World Action Models)](ACTION.md#section-3)
+- [4. 综述与基础 (Surveys & Foundations)](SURVEY.md)
+  - [4.1. 综述 (Surveys)](SURVEY.md#section-1)
+  - [4.2. 理论与报告 (Theory & Talks)](SURVEY.md#section-2)
+  - [4.3. 其他相关系统 (Related Systems)](SURVEY.md#section-3)
+- [5. 数据集与采集工具 (Datasets & Collection)](DATASETS.md)
+  - [5.1. 数据集 (Datasets)](DATASETS.md#section-1)
+  - [5.2. 数据采集接口 (Data Collection Interfaces)](DATASETS.md#section-2)
+- [6. 评测与仿真工具 (Benchmarks & Simulators)](BENCHMARKS.md)
+  - [6.1. 评测基准 (Benchmarks)](BENCHMARKS.md#section-1)
+  - [6.2. 评测指标 (Metrics)](BENCHMARKS.md#section-2)
+  - [6.3. 物理仿真器 (Physics Simulators)](BENCHMARKS.md#section-3)
 
-## 下载全部可用论文
+## 阅读说明
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/download_papers.py --all --workers 4
-```
+- 每条资源采用“论文标题 + Paper + Code + Summary”格式。
+- 按原条目的 Category 归入一个主类；跨方向工作可通过完整列表搜索。
+- 当前收录 64 条去重资源，包含论文、报告、数据集和工具，并非全部都是世界模型方法论文。
+- 标题、年份、论文链接和摘要沿用原目录，尚未逐篇核验；缺失链接标为“待补充”。
 
-只下载某一类：
+## 代码链接核查
 
-```bash
-python scripts/download_papers.py --category represent
-python scripts/download_papers.py --category simulate
-python scripts/download_papers.py --category action
-```
+已检索原先缺失的 56 条资源：补充 34 条官方实现链接（含 3 条部分发布）、5 条官方工具/基线入口、4 条综述资料库和 1 条数据入口；上一轮剩余 12 条现已细分为 10 条官方实现待确认/待发布，以及 2 条代码不适用的演讲。
 
-下载器会检查 PDF 文件头、跳过已下载文件、计算 SHA-256，并生成下载清单与报告。论文 PDF 默认不提交到 Git，以避免仓库过大并降低第三方版权风险。
+[查看全部 56 条缺失项与检索结果](CODE_LINK_AUDIT.md)。未确认的代码继续保留状态；新增 4 条社区实现及 2 条相关独立项目作为补充，均注明归属和限制。存在公开仓库不代表完整训练代码、模型权重和数据均已发布。
 
-## 维护分类目录
+[查看 12 条资源的进一步完善结果](RESOURCE_STATUS.md)。EgoScale 已按方法性质归入行动 / VLA，两个报告条目已补齐可核验来源。
 
-`data/papers.yaml` 是唯一需要人工维护的主目录。修改后执行：
+## 参与贡献 (Contributing)
 
-```bash
-python scripts/validate_catalog.py
-python scripts/export_catalog.py
-python scripts/make_reading_list.py
-```
+请参阅 [贡献指南](CONTRIBUTING.md)。
 
-## 发布到 GitHub
+## 相关综述 (Related Survey)
 
-完成 GitHub CLI 登录后，在仓库目录运行：
+Learning to Represent, Simulate, and Act: A Survey of World Models
 
-```bash
-gh auth login
-bash scripts/publish_github.sh world-models-represent-simulate-act public
-```
+## 排版参考 (Format Reference)
 
-将最后一个参数改为 `private` 可创建私有仓库。
+列表排版参考 [Awesome-CVPR2024-Low-Level-Vision](https://github.com/Kobaayyy/Awesome-CVPR2026-CVPR2025-CVPR2024-CVPR2021-CVPR2020-Low-Level-Vision/blob/master/CVPR2024.md)，论文内容来自本仓库已有目录。
 
-## 重要元数据说明
+## License
 
-原始参考文献中存在少量缺失或冲突。仓库不会对不确定来源进行猜测下载；详细记录见 `docs/metadata-audit.md`。其中编号 `4` 的给定 arXiv 标识实际指向另一篇论文，因此已被明确阻止自动下载，等待补充正确文献信息。
+参见 [LICENSE](LICENSE)。论文版权归各自作者和出版方所有。
