@@ -1,0 +1,111 @@
+\documentclass[conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+
+% ================= Font =================
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+% ================= Packages =================
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{placeins}
+\usepackage{stfloats}
+\usepackage{pifont}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{--}
+% hyperref should be loaded near the end
+\usepackage{hyperref}
+\input{preamble}
+
+\title{Learning to Represent, Simulate, and Act: A Survey of World Models
+\thanks{This work was supported by the National Natural Science Foundation of China 
+(General Program, Grant No. 72571281) and the Excellent Young Scientist Fund of Hunan Province 
+(Grant No. 2025JJ40066).}
+}
+
+\author{
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+1\textsuperscript{st} Shiyang Liu\\
+\textit{Laboratory for Big Data and Decision}\\
+\textit{National University of Defense Technology}\\
+Hunan, China\\
+liushiyang@nudt.edu.cn
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+2\textsuperscript{nd} Zanxi Ruan\\
+\textit{University of Verona}\\
+Italy\\
+zanxi.ruan@univr.it
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+3\textsuperscript{rd} Yingmei Wei*\\
+\textit{Laboratory for Big Data and Decision}\\
+\textit{National University of Defense Technology}\\
+Hunan, China\\
+*Corresponding: weiyingmei@nudt.edu.cn
+\end{minipage}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+World models have become an important paradigm for building intelligent systems that can predict, simulate, and act in dynamic environments. Yet research on world models remains fragmented across representation learning, video generation, physical simulation, and vision-language-action control. This survey organizes recent developments around three core capabilities of world models: representation, simulation, and action. We propose an information-flow perspective in which observations are compressed into predictive internal states, expanded into possible futures, and coupled to executable actions. Building on this view, we introduce a Compression–Generation Principle, inspired by the Information Bottleneck, to characterize the trade-off between compact representation and predictive sufficiency. We further propose a taxonomy that categorizes existing world models into representation models, generative world models, and actionable world models. This framework covers major research directions, including latent dynamics, predictive representation learning, video foundation models, structured scene modeling, VLA systems, World Action Models, and hybrid WM–VLA architectures. Finally, we review representative datasets and benchmarks and discuss open challenges in compression, physical consistency, evaluation, and efficient deployment. This survey provides a principled information-flow framework for comparing how world models compress observations, simulate possible futures, and support embodied action.
+\end{abstract}
+
+\begin{IEEEkeywords}
+World Models; Embodied Intelligence; Vision-Language-Action
+\end{IEEEkeywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{section/introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theoretical Foundation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{section/Representation and Prediction in World Models}
+
+\input{section/compression_generation}
+
+\input{section/information-flow-taxo}
+
+
+\input{section/worldmodels4embodied}
+
+\input{section/DatasetsandBenchmarks}
+
+
+\input{section/open_challenge}
+
+\input{section/conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

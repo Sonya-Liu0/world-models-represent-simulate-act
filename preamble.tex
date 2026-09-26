@@ -1,0 +1,78 @@
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+% ================= Packages =================
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% ================= Soft Pink Colors =================
+\definecolor{softpink}{RGB}{255,249,250}
+\definecolor{softpinkframe}{RGB}{210,150,170}
+\definecolor{softpinktitle}{RGB}{100,55,70}
+
+% ================= Full Core-Function Box =================
+\newtcolorbox{infobox}{
+    enhanced,
+    colback=softpink,
+    colframe=softpinkframe,
+    colbacktitle=softpink,
+    coltitle=softpinktitle,
+    boxrule=0.45pt,
+    arc=2mm,
+    left=1.2mm,
+    right=1.2mm,
+    top=1mm,
+    bottom=1mm,
+    width=\linewidth,
+    before skip=0.6em,
+    after skip=0.6em,
+    fontupper=\normalfont\rmfamily\footnotesize,
+    fonttitle=\normalfont\rmfamily\footnotesize\bfseries,
+    title={Information-Flow Perspective on World Models}
+}
+
+% ================= Inline Core-Function Tags =================
+\newtcbox{\coretagbox}{
+    on line,
+    enhanced,
+    nobeforeafter,
+    colback=softpink,
+    colframe=softpinkframe,
+    boxrule=0.35pt,
+    arc=1.2mm,
+    left=0.5mm,
+    right=0.5mm,
+    top=0.15mm,
+    bottom=0.15mm,
+    boxsep=0.35mm,
+    fontupper=\normalfont\rmfamily\footnotesize
+}
+
+\DeclareRobustCommand{\RepTag}{\coretagbox{\faEye~\textbf{Representation}}}
+\DeclareRobustCommand{\SimTag}{\coretagbox{\faFilm~\textbf{Simulation}}}
+\DeclareRobustCommand{\ActTag}{\coretagbox{\faRobot~\textbf{Action}}}
+
+% ================= Reusable Core-Function Box Command =================
+\newcommand{\CoreFunctionsBox}{%
+\begin{infobox}
+\textbf{\faEye~Representation:} What information should be retained from observations?
+
+\vspace{0.3em}
+\textbf{\faFilm~Simulation:} How should this information be used to generate or predict future states?
+
+\vspace{0.3em}
+\textbf{\faRobot~Action:} How should predicted futures guide executable behavior?
+\end{infobox}
+}
+
