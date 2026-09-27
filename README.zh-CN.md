@@ -2,6 +2,56 @@
 
 整理世界模型相关论文和代码，包括表征学习、世界模拟、行动与控制，以及综述、数据集和评测工具。
 
+## Learning to Represent, Simulate, and Act: A Survey of World Models
+
+[论文 LaTeX 源码](paper/main.tex) · [论文工程说明](paper/README.md) · [数据集与采集工具](DATASETS.md) · [评测与仿真工具](BENCHMARKS.md)
+
+[分类框架](#information-flow) · [模型演进](#evolution) · [WM–VLA](#embodied-integration) · [数据集图示](#dataset-visuals) · [综述结构](#survey-roadmap) · [论文与代码目录](#resource-index)
+
+<a id="information-flow"></a>
+
+### 信息流分类框架
+
+[![Information-flow taxonomy of world models for embodied intelligence.](assets/figures/model3.png)](paper/model3.pdf)
+
+*Information-flow taxonomy of world models for embodied intelligence.* [查看高清 PDF](paper/model3.pdf)
+
+<a id="evolution"></a>
+
+### 世界模型演进
+
+[![Evolution of World Models.](assets/figures/model1.png)](paper/model1.pdf)
+
+*Evolution of World Models.* [查看高清 PDF](paper/model1.pdf)
+
+<a id="embodied-integration"></a>
+
+### 世界模型与 VLA 的具身结合
+
+[![Embodied integration of world models and VLA systems.](assets/figures/model4.png)](paper/model4.pdf)
+
+*Embodied integration of world models and VLA systems.* [查看高清 PDF](paper/model4.pdf)
+
+<a id="dataset-visuals"></a>
+
+### 数据集图示
+
+[![Representative visual forms of datasets used in world-model research.](assets/figures/model5.png)](paper/model5.pdf)
+
+*Representative visual forms of datasets used in world-model research.* [查看高清 PDF](paper/model5.pdf)
+
+<a id="survey-roadmap"></a>
+
+### 综述结构与理论框架
+
+[![Overview of the survey structure.](assets/figures/model2.png)](paper/model2.pdf)
+
+*Overview of the survey structure.* [查看高清 PDF](paper/model2.pdf)
+
+---
+
+<a id="resource-index"></a>
+
 〖Contents〗
 
 - [1.表征学习(Representation)](#topic-1)

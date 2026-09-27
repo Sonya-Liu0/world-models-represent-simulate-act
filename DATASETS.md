@@ -2,6 +2,12 @@
 
 [返回首页](README.md#topic-5)
 
+## 数据集可视化
+
+[![Representative visual forms of world-model datasets](assets/figures/model5.png)](paper/model5.pdf)
+
+[查看高清 PDF](paper/model5.pdf) · [返回首页图示](README.md#dataset-visuals)
+
 ### Ego4D: around the world in 3,600 hours of egocentric video (2025)
 
 - Paper: <https://arxiv.org/pdf/2110.07058>
